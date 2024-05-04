@@ -3,7 +3,6 @@ let guess = 10;
 let message = document.getElementById("check")
 let displayScore = document.getElementById("score")
 let displayAnswer = document.getElementById("number")
-console.log(answer)
 function result() {
     let userInput = (document.getElementById('userInput').value)
     if (!userInput) {
@@ -39,6 +38,7 @@ function reset(){
     guess = 10;
     displayAnswer.textContent = "?";
     document.body.style.backgroundColor = "#222";
-    console.log(answer)
+    message.textContent = "Start guessing..."
+    displayScore.textContent = guess
     userInput.value = null
 }
