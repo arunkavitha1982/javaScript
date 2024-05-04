@@ -24,10 +24,9 @@ function result() {
             displayScore.textContent = guess
             document.body.style.backgroundColor = "green";
             displayAnswer.textContent = answer;
-        }
-        
+        }        
     }
-    else {
+    else{
         message.textContent = "your are lose the game";
         document.body.style.backgroundColor = "red";
         displayAnswer.textContent = answer;
