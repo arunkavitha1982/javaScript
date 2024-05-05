@@ -1,5 +1,4 @@
-body {
-    
+body {    
     font-family: Arial, sans-serif;    
     display: flex;
     justify-content: center;
@@ -9,13 +8,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
   }
-
-
-  
-  
-
   #bmi-container {
     background-color: #fff;
     padding: 50px;
