@@ -9,47 +9,27 @@ let displayPlayerScore = document.getElementById('player_score');
 let displayComputerScore = document.getElementById('computer_score');
 let winner = document.getElementById('winner');
 let restartButton = document.getElementById('restart');
+rock.onclick = function() {
+    handleMove(11, 'image/rock.png');
+};
 
-scissor.addEventListener('click', function () {
-    let userMoveResId = 33;
-    userMove.src = 'image/scissors.png';
-    let random = Math.floor(Math.random() * 3);
-    let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
+paper.onclick = function() {
+    handleMove(22, 'image/paper.png');
+};
 
-    let computerMoveResId = randomImage[random];
-    computerMove.src = computerMoveResId;
-
-    let computerMovenumber = [22, 11, 33];
-    let computerMoveId = computerMovenumber[random];
-    compareMoves(userMoveResId, computerMoveId);
-});
-
-rock.addEventListener('click', function () {
-    let userMoveResId = 11;
-    userMove.src = 'image/rock.png';
-    let random = Math.floor(Math.random() * 3);
-    let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
-
-    let computerMoveResId = randomImage[random];
-    computerMove.src = computerMoveResId;
-
-    let computerMovenumber = [22, 11, 33];
-    let computerMoveId = computerMovenumber[random];
-    compareMoves(userMoveResId, computerMoveId);
-});
-
-paper.addEventListener('click', function () {
-    let userMoveResId = 22;
-    userMove.src = 'image/paper.png';
+scissor.onclick = function() {
+    handleMove(33, 'image/scissors.png');
+};
+function handleMove(userMoveResId, userImageSrc) {
+     userMove.src = userImageSrc;
     let random = Math.floor(Math.random() * 3);
     let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
     let computerMoveResId = randomImage[random];
     computerMove.src = computerMoveResId;
-
     let computerMovenumber = [22, 11, 33];
     let computerMoveId = computerMovenumber[random];
     compareMoves(userMoveResId, computerMoveId);
-});
+}
 
 restartButton.addEventListener('click', function () {
     userMove.src = 'image/you.png';
@@ -91,17 +71,20 @@ function compareMoves(userMoveResId, computerMoveResId) {
             winner.innerText = "🎉🎉You are the winner🎉🎉";
             userMove.src = 'image/img.png';
             computerMove.src = 'image/lose.png';
-            
+            disableButtons();
         } else if (computerScore == 4) {
             computerScore++;
             displayComputerScore.textContent = computerScore;
             winner.innerText = "🎉🎉Computer is the winner🎉🎉";
             computerMove.src = 'image/img.png';
             userMove.src = 'image/lose.png';
-            scissor.disabled = true;
-            paper.disabled = true;
-            rock.disabled = true;
+            disableButtons();
         }
-
     }
+}
+
+function disableButtons() {
+    scissor.disabled = true;
+    paper.disabled = true;
+    rock.disabled = true;
 }
