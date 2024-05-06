@@ -10,38 +10,49 @@ let displayComputerScore = document.getElementById('computer_score');
 let winner = document.getElementById('winner');
 let restartButton = document.getElementById('restart');
 
-scissor.addEventListener('click', function() {
-    let userMoveResId = 'scissor';
-    userMove.src = 'image/scissors.png'; 
+scissor.addEventListener('click', function () {
+    let userMoveResId = 33;
+    userMove.src = 'image/scissors.png';
     let random = Math.floor(Math.random() * 3);
     let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
+
     let computerMoveResId = randomImage[random];
     computerMove.src = computerMoveResId;
-    compareMoves(userMoveResId, computerMoveResId);
+
+    let computerMovenumber = [22, 11, 33];
+    let computerMoveId = computerMovenumber[random];
+    compareMoves(userMoveResId, computerMoveId);
 });
 
-rock.addEventListener('click', function() {
-    let userMoveResId = 'rock';
+rock.addEventListener('click', function () {
+    let userMoveResId = 11;
     userMove.src = 'image/rock.png';
     let random = Math.floor(Math.random() * 3);
-    let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png']; 
+    let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
+
     let computerMoveResId = randomImage[random];
     computerMove.src = computerMoveResId;
-    compareMoves(userMoveResId, computerMoveResId);
+
+    let computerMovenumber = [22, 11, 33];
+    let computerMoveId = computerMovenumber[random];
+    compareMoves(userMoveResId, computerMoveId);
 });
 
-paper.addEventListener('click', function() {
-    let userMoveResId = 'paper'; 
-    userMove.src = 'image/paper.png'; 
+paper.addEventListener('click', function () {
+    let userMoveResId = 22;
+    userMove.src = 'image/paper.png';
     let random = Math.floor(Math.random() * 3);
     let randomImage = ['image/paper.png', 'image/rock.png', 'image/scissors.png'];
     let computerMoveResId = randomImage[random];
     computerMove.src = computerMoveResId;
-    compareMoves(userMoveResId, computerMoveResId);
+
+    let computerMovenumber = [22, 11, 33];
+    let computerMoveId = computerMovenumber[random];
+    compareMoves(userMoveResId, computerMoveId);
 });
 
-restartButton.addEventListener('click', function() {
-    userMove.src = 'image/you.png'; 
+restartButton.addEventListener('click', function () {
+    userMove.src = 'image/you.png';
     computerMove.src = 'image/question_mark.png';
     playerScore = 0;
     computerScore = 0;
@@ -55,20 +66,20 @@ restartButton.addEventListener('click', function() {
 
 function compareMoves(userMoveResId, computerMoveResId) {
     if (playerScore < 4 && computerScore < 4) {
-        winner.innerText = "";
+        winner.innerText = "sda";
         if (userMoveResId == computerMoveResId) {
             winner.innerText = "It is equal";
         } else if (
-            (userMoveResId ==='scissor' && computerMoveResId === 'paper') ||
-            (userMoveResId === 'rock' && computerMoveResId === 'scissor') ||
-            (userMoveResId === 'paper' && computerMoveResId === 'rock')
+            (userMoveResId == 33 && computerMoveResId == 22) ||
+            (userMoveResId == 11 && computerMoveResId == 33) ||
+            (userMoveResId == 22 && computerMoveResId == 11)
         ) {
             playerScore++;
             displayPlayerScore.textContent = playerScore;
             winner.innerText = "";
-        } else if ((computerMoveResId === 'scissor' && userMoveResId === 'paper') ||
-            (computerMoveResId === 'rock' && userMoveResId === 'scissor') ||
-            (computerMoveResId === 'paper' && userMoveResId === 'rock')) {
+        } else if ((computerMoveResId == 33 && userMoveResId == 22) ||
+            (computerMoveResId == 11 && userMoveResId == 33) ||
+            (computerMoveResId == 22 && userMoveResId == 11)) {
             computerScore++;
             displayComputerScore.textContent = computerScore;
             winner.innerText = "";
@@ -78,17 +89,19 @@ function compareMoves(userMoveResId, computerMoveResId) {
             playerScore++;
             displayPlayerScore.textContent = playerScore;
             winner.innerText = "🎉🎉You are the winner🎉🎉";
-            userMove.src = 'image/img.jpg';
-            computerMove.src = 'image/question_mark.png';
+            userMove.src = 'image/img.png';
+            computerMove.src = 'image/lose.png';
+            
         } else if (computerScore == 4) {
             computerScore++;
             displayComputerScore.textContent = computerScore;
             winner.innerText = "🎉🎉Computer is the winner🎉🎉";
-            computerMove.src = 'image/img.jpg';
-            userMove.src = 'image/lose.jpg'; // Replace 'image/lose.jpg' with the actual path to loser image
+            computerMove.src = 'image/img.png';
+            userMove.src = 'image/lose.png';
+            scissor.disabled = true;
+            paper.disabled = true;
+            rock.disabled = true;
         }
-        scissor.disabled = true;
-        paper.disabled = true;
-        rock.disabled = true;
+
     }
 }
