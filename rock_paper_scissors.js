@@ -36,7 +36,7 @@ restartButton.addEventListener('click', function () {
     computerMove.src = 'image/question_mark.png';
     playerScore = 0;
     computerScore = 0;
-    winner.innerText = "";
+    winner.textContent = "";
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
     scissor.disabled = false;
@@ -46,9 +46,9 @@ restartButton.addEventListener('click', function () {
 
 function compareMoves(userMoveResId, computerMoveResId) {
     if (playerScore < 4 && computerScore < 4) {
-        winner.innerText = "sda";
+        winner.textContent = "sda";
         if (userMoveResId == computerMoveResId) {
-            winner.innerText = "It is equal";
+            winner.textContent = "It is equal";
         } else if (
             (userMoveResId == 33 && computerMoveResId == 22) ||
             (userMoveResId == 11 && computerMoveResId == 33) ||
@@ -56,13 +56,13 @@ function compareMoves(userMoveResId, computerMoveResId) {
         ) {
             playerScore++;
             displayPlayerScore.textContent = playerScore;
-            winner.innerText = "";
+            winner.textContent = "";
         } else if ((computerMoveResId == 33 && userMoveResId == 22) ||
             (computerMoveResId == 11 && userMoveResId == 33) ||
             (computerMoveResId == 22 && userMoveResId == 11)) {
             computerScore++;
             displayComputerScore.textContent = computerScore;
-            winner.innerText = "";
+            winner.textContent = "";
         }
     } else {
         if (playerScore == 4) {
@@ -75,7 +75,7 @@ function compareMoves(userMoveResId, computerMoveResId) {
         } else if (computerScore == 4) {
             computerScore++;
             displayComputerScore.textContent = computerScore;
-            winner.innerText = "🎉🎉Computer is the winner🎉🎉";
+            winner.textContent = "🎉🎉Computer is the winner🎉🎉";
             computerMove.src = 'image/img.png';
             userMove.src = 'image/lose.png';
             disableButtons();
