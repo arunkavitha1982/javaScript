@@ -8,38 +8,38 @@
     <link rel="stylesheet" href="calculator.css">
 </head>
 
-<body>
+<body style="background-image: url(https://manybackgrounds.com/images/hd/advanced-modern-calculator-on-a-work-desk-ekgg3z56dr6pt56g.jpg);background-repeat: no-repeat; background-attachment: fixed;background-position: center;background-size: cover;">
     <div class="calculator">
         <div class="display" id="display"></div>
         <div class="row">
-            <button class="button" id="cancel" onclick="cancel()">C</button>
-            <button class="button" id="rougn"onclick="deleteLast()">X</button>
-            <button class="button" id="squar" onclick="operator()">x²</button>
+            <button class="button" id="cancel" onclick="cancel()">AC</button>
+            <button class="button" id="rougn"onclick="deleteLast()">DEL</button>
+            <button class="button" id="squar" onclick="root()">x²</button>
             <button class="button" id="name">AK</button>
         </div>
         <div class="row">
-            <button class="button" id="seven" onclick="onDigit()">7</button>
-            <button class="button" id="eight" onclick="onDigit()">8</button>
-            <button class="button" id="nine" onclick="onDigit()">9</button>
-            <button class="button" id="division" onclick="onDigit()">/</button>
+            <button class="button" id="seven" onclick="onDigit(7)">7</button>
+            <button class="button" id="eight" onclick="onDigit(8)">8</button>
+            <button class="button" id="nine" onclick="onDigit(9)">9</button>
+            <button class="button" id="division" onclick="operator('/')">/</button>
         </div>
         <div class="row">
-            <button class="button" id="four" onclick="onDigit()">4</button>
-            <button class="button" id="five" onclick="onDigit()">5</button>
-            <button class="button" id="six" onclick="onDigit()">6</button>
-            <button class="button" id="multiple" onclick="onDigit()">*</button>
+            <button class="button" id="four" onclick="onDigit(4)">4</button>
+            <button class="button" id="five" onclick="onDigit(5)">5</button>
+            <button class="button" id="six" onclick="onDigit(6)">6</button>
+            <button class="button" id="multiple" onclick="operator('*')">*</button>
         </div>
         <div class="row">
-            <button class="button" id="one" onclick="onDigit()">1</button>
-            <button class="button" id="two" onclick="onDigit()">2</button>
-            <button class="button" id="three" onclick="onDigit()">3</button>
-            <button class="button" id="substacton" onclick="operator()">-</button>
+            <button class="button" id="one" onclick="onDigit(1)">1</button>
+            <button class="button" id="two" onclick="onDigit(2)">2</button>
+            <button class="button" id="three" onclick="onDigit(3)">3</button>
+            <button class="button" id="substacton" onclick="operator('-')">-</button>
         </div>
         <div class="row">
             <button class="button" id="dot" onclick="dot()">.</button>
-            <button class="button" id="zero" onclick="onDigit()">0</button>
+            <button class="button" id="zero" onclick="onDigit(0)">0</button>
             <button class="button" id="equal" onclick="equal()">=</button>
-            <button class="button" id="plus" onclick="operator()">+</button>
+            <button class="button" id="plus" onclick="operator('+')">+</button>
         </div>
     </div>
     <script src="calculator.js"></script>

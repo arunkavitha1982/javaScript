@@ -10,6 +10,12 @@ function cancel() {
     dotClickable = true;
 }
 
+function root(){
+    let userInput = display.textContent;
+    userInput =userInput*userInput
+    display.textContent = userInput
+}
+
 function deleteLast() {
     display.textContent = display.textContent.slice(0, -1);
 }
@@ -32,7 +38,7 @@ function operator(value) {
 
 function equal() {
     var output;
-    var userVal = display.textContent; // Using 'display' instead of 'usInput'
+    var userVal = display.textContent; 
     var prefix = "";
     
     if (userVal.startsWith("-")) {
@@ -80,13 +86,13 @@ function equal() {
         output = firstVal / parseFloat(userInput[1]);
     }
 
-    display.textContent = removeZeroDecimal(output); // Using 'display' instead of 'usInput'
+    display.textContent = removeZeroDecimal(output); 
 }
 
 function removeZeroDecimal(result) {
     if (Number.isInteger(result)) {
         return result;
     } else {
-        return result.toFixed(2); // Adjust decimal places as needed
+        return result.toFixed(2); 
     }
 }

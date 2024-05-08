@@ -1,9 +1,13 @@
 .calculator {
-    width: 400px; /* Adjust width as needed */
+    width: 400px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: black;
+    border-radius: 4%;
+    margin-top: 10%;
+    
 }
 
 .display {
@@ -13,6 +17,8 @@
     text-align: right;
     padding: 10px;
     margin-bottom: 10px;
+    font-size: 40px;
+    
 }
 
 .row {
