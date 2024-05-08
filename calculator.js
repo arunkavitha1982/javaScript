@@ -1,5 +1,4 @@
 let display = document.getElementById('display'); 
-let answerDisplay = document.getElementById('display2');
 let dotClickable = true;
 
 function appendToDisplay(value) {
@@ -8,7 +7,7 @@ function appendToDisplay(value) {
 
 function cancel() {
     display.textContent = '';
-    answerDisplay.textContent = '';
+    
     dotClickable = true;
 }
 
@@ -88,8 +87,7 @@ function equal() {
         output = firstVal / parseFloat(userInput[1]);
     }
 
-    display.textContent = ''; 
-    answerDisplay.textContent = removeZeroDecimal(output); 
+    display.textContent = removeZeroDecimal(output); 
 }
 
 function removeZeroDecimal(result) {
