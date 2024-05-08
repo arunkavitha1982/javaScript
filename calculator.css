@@ -1,3 +1,11 @@
+body {
+    background-image: url(https://manybackgrounds.com/images/hd/advanced-modern-calculator-on-a-work-desk-ekgg3z56dr6pt56g.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
 .calculator {
     width: 400px;
     margin: 0 auto;
@@ -7,7 +15,6 @@
     background-color: black;
     border-radius: 4%;
     margin-top: 10%;
-    
 }
 
 .display {
@@ -18,7 +25,7 @@
     padding: 10px;
     margin-bottom: 10px;
     font-size: 40px;
-    
+
 }
 
 .row {
