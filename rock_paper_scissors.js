@@ -39,9 +39,9 @@ restartButton.addEventListener('click', function () {
     winner.textContent = "";
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
-    scissor.disabled = false;
-    paper.disabled = false;
-    rock.disabled = false;
+    scissor.style.display = "inline";
+    paper.style.display  = "inline";
+    rock.style.display  = "inline";
 });
 
 function compareMoves(userMoveResId, computerMoveResId) {
@@ -84,7 +84,7 @@ function compareMoves(userMoveResId, computerMoveResId) {
 }
 
 function disableButtons() {
-    scissor.disabled = true;
-    paper.disabled = true;
-    rock.disabled = true;
+    scissor.style.display = "none";
+    paper.style.display = "none";
+    rock.style.display = "none";
 }
