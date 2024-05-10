@@ -27,7 +27,7 @@ function result() {
 
         }
         else if (userInput < answer) {
-            displayImage.style.backgroundImage ="url(image/yellow.webp)";
+            displayImage.style.backgroundImage = "url(image/yellow.webp)";
             message.textContent = "Too Low...Guess Higher";
             displayScore.textContent = guess + "/15";
             guesscounter.textContent += " " + userInput + ",";
@@ -37,13 +37,14 @@ function result() {
         }
         else {
             message.textContent = "Well Done. You Correctly Guessed That The Number Was " + answer + " . Try Another Number.";
+            message.style.fontSize = '16px';
             displayScore.textContent = guess;
             guesscounter.textContent += " " + userInput + ",";
             displayScore.textContent = guess + "/15";
             displayImage.style.backgroundImage = 'url(image/winners-trophy-clip-art.jpg)'
             winner++;
-            win.textContent = winner+1;
-            document.getElementById("streakcounter").textContent = guess+1;
+            win.textContent = winner + 1;
+            document.getElementById("streakcounter").textContent = guess + 1;
             document.getElementById("other").style.display = "block";
             document.getElementById("submit").style.display = "none";
             document.getElementById('guess').style.display = "none";
@@ -75,6 +76,7 @@ function reset() {
     document.body.style.backgroundColor = "orange";
     guesscounter.textContent = "";
     message.textContent = "Try To Guess The Whole Number Between 0 And 20.";
+    message.style.fontSize = '16px';
     console.log(answer);
     displayImage.style.backgroundImage = "url(image/question-mark.webp)";
     document.getElementById('guess').value = null;
@@ -88,6 +90,8 @@ function reset() {
     win.textContent = winner;
 }
 function giveup() {
+    message.style.fontSize = '16px';
+    message.textContent = "Did You Give Up? You Did Not Make Any Attempt To Guess The Number. Anyway, The Number Was " + answer + ". Try Another Number.";
     document.getElementById("other").style.display = "block";
     document.getElementById("submit").style.display = "none";
     document.getElementById('guess').style.display = "none";
