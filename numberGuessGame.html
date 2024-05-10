@@ -1,40 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="numGuessGame.css" />
-   <script defer src="numGuessGame.js"></script>
-   <link rel="icon" href="image/numberGuessGame icon.png">
-    <title>Guess My Number!</title>
-  </head>  
-  <body>    
-    <header>
-      <h1>Guess My Number!</h1>
-      <p class="between">(Between 0 and 20)</p>
-      <button class="btn again" id="againBtn" onclick="reset()">Again!</button>
-      <div class="number" id="number">?</div>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="numGuessGame.css">
+</head>
+<body>
+  <h1>Guess The Number</h1>
+  <h2>Between 0 and 20</h2>
+ <h5 id="nomoreattempts"></h5>
+  <div id="resultarea">
+  <section id="result"><img src="image/question-mark.webp" height="100%" id="image"></section>
+    <section id="result2">
+      <h4 id="status">Try To Guess The Whole Number Between 0 And 20.</h4>
+    </section>
 
-    </header>
-    <main>
-      <section class="left">
-        <input type="number" class="guess" id="userInput" onfocus="this.value=''" />
-        <button class="btn check" id="startBtn" onclick="result()">Check!</button>
-      </section>
-      <section class="right">
-        <p class="message" id="check">Start guessing...</p>
-        <p class="label-score">💯 Chances left: <span class="score" id="score">10</span></p>
-        <!-- <p class="label-highscore">
-          🥇 Highscore: <span class="highscore" id="highscore">0</span>
-        </p> -->
-      </section>
-    </main>
 
-   
+    <section id="result3">
+      <p id="stats">Game Stats:</p>
+      <div id="attempt">Attempts : <span id="attemptcounter">15/15</span></div>
+      <div id="guessessofar">Your Guesses : <span id="guesscounter"></span></div>
+       <div id="win">Wins : <span id="scorecounter"></span></div>
+      <div id="streak">Score : <span id="streakcounter"></span></div>
+      
+    </section>
 
-    
-  </body>    
+
+ </div>
+
+  <div id="inputarea">
+    <input type="number" placeholder="Your Guess Here..." id="guess">
+  <button onclick="result()" id="submit">Submit Guess</button>
+  <button onclick="giveup()" id="giveup"> Give Up?</button>
+
+  <button onclick="reset()" id="other"> Try Another Number</button>
+  </div>
+    <script src="numGuessGame.js"></script>
+</body>
 </html>

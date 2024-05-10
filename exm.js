@@ -5,11 +5,11 @@ let message = document.getElementById("status");
 let displayScore = document.getElementById("attemptcounter");
 let checkBoxInput = document.getElementById("number");
 let guesscounter = document.getElementById("guesscounter");
-let win = document.getElementById("scorecounter");
+let win = document.getElementById("scorecounter")
 let displayImage = document.getElementById("image");
-let displayAnswer = document.getElementById("nomoreattempts");
+let displayAnswer = document.getElementById("nomoreattempts")
 document.getElementById("other").style.display = "none";
-console.log(answer);
+console.log(answer)
 
 function result() {
     let userInput = (document.getElementById('guess').value);
@@ -55,7 +55,7 @@ function result() {
             displayImage.style.paddingTop = "10%";
             winner++;
             win.textContent = winner;
-            document.getElementById("streakcounter").textContent = guess;
+            document.getElementById("streakcounter").textContent = guess+1;
             document.getElementById("other").style.display = "block";
             document.getElementById("submit").style.display = "none";
             document.getElementById('guess').style.display = "none";
