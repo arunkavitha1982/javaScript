@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake and Ladder Game</title>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        grid-template-rows: repeat(10, 50px);
+        border: 2px solid black;
+    }
+    .cell {
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="grid" id="grid"></div>
+<button onclick="rollDice()">Roll Dice</button>
+<p id="message"></p>
+
+<script>
+    // Define snakes and ladders positions
+    const snakesAndLadders = {
+        16: 6, 47: 26, 49: 11, 56: 53, 62: 19,
+        64: 60, 87: 24, 93: 73, 95: 75, 98: 78
+    };
+
+    // Function to roll a dice
+    function rollDice() {
+        const diceRoll = Math.floor(Math.random() * 6) + 1;
+        document.getElementById('message').textContent = 'You rolled a ' + diceRoll + '.';
+        movePlayer(diceRoll);
+    }
+
+    // Function to move the player
+    function movePlayer(diceRoll) {
+        let currentPosition = parseInt(document.getElementById('player').dataset.position);
+        let newPosition = currentPosition + diceRoll;
+        if (snakesAndLadders[newPosition]) {
+            newPosition = snakesAndLadders[newPosition];
+            document.getElementById('message').textContent += ' Oops! You landed on a snake/ladder. You move to position ' + newPosition + '.';
+        } else {
+            document.getElementById('message').textContent += ' You move to position ' + newPosition + '.';
+        }
+        document.getElementById('player').dataset.position = newPosition;
+    }
+
+    // Initialize the game
+    function initGame() {
+        let grid = document.getElementById("grid");
+        let cellCount = 1;
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                let cell = document.createElement("div");
+                cell.classList.add("cell");
+                cell.textContent = cellCount;
+                grid.appendChild(cell);
+                cellCount++;
+            }
+        }
+        
+        // Add player token
+        let playerToken = document.createElement("div");
+        playerToken.textContent = "P";
+        playerToken.style.color = "red";
+        playerToken.style.fontWeight = "bold";
+        playerToken.style.fontSize = "20px";
+        playerToken.id = "player";
+        playerToken.dataset.position = "1";
+        document.querySelector(".cell").appendChild(playerToken);
+    }
+
+    // Call initGame function when the page is loaded
+    window.onload = initGame;
+</script>
+
+</body>
+</html>

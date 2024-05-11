@@ -43,7 +43,7 @@ function result() {
             displayScore.textContent = guess + "/15";
             displayImage.style.backgroundImage = 'url(image/winners-trophy-clip-art.jpg)'
             winner++;
-            win.textContent = winner + 1;
+            win.textContent = winner;
             document.getElementById("streakcounter").textContent = guess + 1;
             document.getElementById("other").style.display = "block";
             document.getElementById("submit").style.display = "none";

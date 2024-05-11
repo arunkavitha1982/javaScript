@@ -109,6 +109,7 @@ span {
 #submit {
   padding: 50x;
   background-color: gold;
+  cursor: pointer;
 }
 #giveup {
   background-color: gold;
