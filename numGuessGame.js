@@ -1,4 +1,4 @@
-let answer = Math.floor((Math.random() * 20) + 1);
+let answer = Math.floor((Math.random() * 50) + 1);
 let guess = 14;
 let winner = 0;
 let message = document.getElementById("status");
@@ -27,7 +27,7 @@ function result() {
 
         }
         else if (userInput < answer) {
-            displayImage.style.backgroundImage = "url(image/yellow.webp)";
+            displayImage.style.backgroundImage = "url(https://cdn3.vectorstock.com/i/1000x1000/65/47/low-symbol-vector-1746547.jpg)";
             message.textContent = "Too Low...Guess Higher";
             displayScore.textContent = guess + "/15";
             guesscounter.textContent += " " + userInput + ",";
