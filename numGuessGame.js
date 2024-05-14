@@ -1,5 +1,6 @@
 let answer = Math.floor((Math.random() * 50) + 1);
 let guess = 14;
+let attemot = 1;
 let winner = 0;
 let message = document.getElementById("status");
 let displayScore = document.getElementById("attemptcounter");
