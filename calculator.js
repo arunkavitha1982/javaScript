@@ -23,7 +23,11 @@ function root() {
     let result = Math.sqrt(userInput);
     display.textContent = result;
 }
-
+function squar(){
+    let userInput = display.textContent;
+    userInput =userInput*userInput;
+    display.textContent= userInput
+}
 function deleteLast() {
     let text = display.textContent;
     if (text.length > 1) {
