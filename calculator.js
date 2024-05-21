@@ -38,62 +38,7 @@ function operator(value) {
 }
 
 function equal() {
-    var output;
-    var userVal = display.textContent; 
-    var prefix = "";
-    
-    if (userVal.startsWith("-")) {
-        prefix = "-";
-        userVal = userVal.substring(1);
-    }
-
-    
-    
-    if (userVal.includes("+")) {
-        var userInput = userVal.split("+");
-        var firstVal = parseFloat(userInput[0]);
-        
-        if (prefix === "-") {
-            firstVal = parseFloat(prefix + userInput[0]);
-        }
-        
-        output = firstVal + parseFloat(userInput[1]);
-    } else if (userVal.includes("-")) {
-        var userInput = userVal.split("-");
-        var firstVal = parseFloat(userInput[0]);
-        
-        if (prefix === "-") {
-            firstVal = parseFloat(prefix + userInput[0]);
-        }
-        
-        output = firstVal - parseFloat(userInput[1]);
-    } else if (userVal.includes("*")) {
-        var userInput = userVal.split("*");
-        var firstVal = parseFloat(userInput[0]);
-        
-        if (prefix === "-") {
-            firstVal = parseFloat(prefix + userInput[0]);
-        }
-        
-        output = firstVal * parseFloat(userInput[1]);
-    } else if (userVal.includes("/")) {
-        var userInput = userVal.split("/");
-        var firstVal = parseFloat(userInput[0]);
-        
-        if (prefix === "-") {
-            firstVal = parseFloat(prefix + userInput[0]);
-        }
-        
-        output = firstVal / parseFloat(userInput[1]);
-    }
-
-    display.textContent = removeZeroDecimal(output); 
+    var userVal = display.textContent;
+    display.textContent=math.evaluate(userVal)
 }
 
-function removeZeroDecimal(result) {
-    if (Number.isInteger(result)) {
-        return result;
-    } else {
-        return result.toFixed(2); 
-    }
-}
