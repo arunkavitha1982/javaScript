@@ -48,16 +48,14 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 600px) {
     .calculator {
-        margin-top: 50%;
-        width: 90%;
-        padding: 20px;
+        margin-top: 70%;
+        width: 100%;
     }
 
     .row {
         width: 100%;
-
     }
 
     .button {
@@ -66,5 +64,3 @@ body {
     }
 
 }
-
-/* Add more CSS for other elements as needed */
