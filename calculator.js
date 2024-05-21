@@ -1,19 +1,25 @@
-
-let display = document.getElementById('display'); 
-display.textContent= 0;
+let display = document.getElementById('display');
 let dotClickable = true;
 
 function appendToDisplay(value) {
-    display.textContent += value;
+    if(value==='.'){
+        display.textContent+=value
+    }
+    else if (display.textContent === '0' || display.textContent === 'Error') {
+        display.textContent = value;
+    }
+    else {
+        display.textContent += value;
+    }
 }
 
 function cancel() {
-    display.textContent = 0;    
+    display.textContent = 0;
     dotClickable = true;
 }
 
 function root() {
-    let userInput = parseFloat(display.textContent);
+    let userInput = display.textContent;
     let result = Math.sqrt(userInput);
     display.textContent = result;
 }
@@ -29,12 +35,9 @@ function deleteLast() {
 
 
 function onDigit(value) {
-    if (display.textContent === '0') {
-        display.textContent = value;
-    } else {
-        appendToDisplay(value);
-    }
+    appendToDisplay(value);
 }
+
 
 function dot() {
     if (dotClickable) {
@@ -47,10 +50,14 @@ function operator(value) {
     appendToDisplay(value);
     dotClickable = true;
 }
-
 function equal() {
     var userVal = display.textContent;
-    display.textContent = math.evaluate(userVal);
+    try {
+        display.textContent = math.evaluate(userVal);
+    } catch (error) {
+        display.textContent = 'Error';
+    }
 }
+
 
 

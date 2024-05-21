@@ -13,16 +13,16 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="display" id="display"></div>
+        <div class="display" id="display">0</div>
         <div class="row">
             <button class="button" id="cancel" onclick="cancel()">C</button>
             <button class="button" id="rougn" onclick="deleteLast()">⌫</button>
             <button class="button" id="squar" onclick="operator('(')">(</button>
             <button class="button" id="squar" onclick="operator(')')">)</button>
-            <button class="button" id="squar" onclick="root()">x2</button>
+            <button class="button" id="squar" onclick="root()">√ </button>
         </div>
         <div class="row">
-            <button class="button" id="seven" onclick="onDigit(7)">7</button>
+            <button class="button" id="seven" onclick="onDigit('7')">7</button>
             <button class="button" id="eight" onclick="onDigit(8)">8</button>
             <button class="button" id="nine" onclick="onDigit(9)">9</button>
             <button class="button" id="division" onclick="operator('/')">/</button>
