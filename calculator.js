@@ -1,4 +1,6 @@
+
 let display = document.getElementById('display'); 
+display.textContent= 0;
 let dotClickable = true;
 
 function appendToDisplay(value) {
@@ -6,23 +8,32 @@ function appendToDisplay(value) {
 }
 
 function cancel() {
-    display.textContent = '';
-    
+    display.textContent = 0;    
     dotClickable = true;
 }
 
-function root(){
-    let userInput = display.textContent;
-    userInput =userInput*userInput
-    display.textContent = userInput
+function root() {
+    let userInput = parseFloat(display.textContent);
+    let result = Math.sqrt(userInput);
+    display.textContent = result;
 }
 
 function deleteLast() {
-    display.textContent = display.textContent.slice(0, -1);
+    let text = display.textContent;
+    if (text.length > 1) {
+        display.textContent = text.slice(0, -1);
+    } else {
+        display.textContent = '0';
+    }
 }
 
+
 function onDigit(value) {
-    appendToDisplay(value);
+    if (display.textContent === '0') {
+        display.textContent = value;
+    } else {
+        appendToDisplay(value);
+    }
 }
 
 function dot() {
@@ -39,6 +50,7 @@ function operator(value) {
 
 function equal() {
     var userVal = display.textContent;
-    display.textContent=math.evaluate(userVal)
+    display.textContent = eval(userVal);
 }
+
 
