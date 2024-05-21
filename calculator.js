@@ -4,13 +4,33 @@ function appendToDisplay(value) {
     if (value === '.') {
         display.textContent += value
     }
-    else if (display.textContent === '0' || display.textContent === 'Error') {
+    else if (display.textContent === '0' || display.textContent === 'Syntax Error') {
         display.textContent = value;
     }
     else {
         display.textContent += value;
     }
 }
+
+function pi(){
+    let pi_value = 3.14159265359;
+    if (display.textContent === '.') {
+        display.textContent += pi_value
+    }
+    else if (display.textContent === '0' || display.textContent === 'Syntax Error') {
+        display.textContent = pi_value;
+    }
+    else {
+        display.textContent += pi_value;
+    }
+}
+
+function powerOfTen(){
+    let userInput = display.textContent;
+    userInput = userInput*userInput*userInput*userInput*userInput*userInput*userInput*userInput*userInput*userInput*userInput;
+    display.textContent = userInput;
+}
+
 function cancel() {
     display.textContent = 0;
     dotClickable = true;
@@ -20,10 +40,16 @@ function root() {
     let result = Math.sqrt(userInput);
     display.textContent = result;
 }
+function cube(){
+    let userInput = display.textContent;
+    userInput = userInput * userInput*userInput;
+    display.textContent = userInput;
+
+}
 function squar() {
     let userInput = display.textContent;
     userInput = userInput * userInput;
-    display.textContent = userInput
+    display.textContent = userInput;
 }
 function deleteLast() {
     let text = display.textContent;
@@ -50,7 +76,7 @@ function equal() {
     try {
         display.textContent = math.evaluate(userVal);
     } catch (error) {
-        display.textContent = 'Error';
+        display.textContent = 'Syntax Error';
     }
 }
 
