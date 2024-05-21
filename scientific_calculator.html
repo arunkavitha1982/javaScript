@@ -22,33 +22,32 @@
             <button class="button" id="squar" onclick="root()">√ </button>
         </div>
         <div class="row">
-            <button class="button" id="seven" onclick="onDigit('7')">7</button>
-            <button class="button" id="eight" onclick="onDigit(8)">8</button>
-            <button class="button" id="nine" onclick="onDigit(9)">9</button>
+            <button class="button" id="seven" onclick="appendToDisplay(7)">7</button>
+            <button class="button" id="eight" onclick="appendToDisplay(8)">8</button>
+            <button class="button" id="nine" onclick="appendToDisplay(9)">9</button>
             <button class="button" id="division" onclick="operator('/')">/</button>
             <button class="button" id="squar" onclick="operator('cos(')">cos()</button>
         </div>
         <div class="row">
-            <button class="button" id="four" onclick="onDigit(4)">4</button>
-            <button class="button" id="five" onclick="onDigit(5)">5</button>
-            <button class="button" id="six" onclick="onDigit(6)">6</button>
+            <button class="button" id="four" onclick="appendToDisplay(4)">4</button>
+            <button class="button" id="five" onclick="appendToDisplay(5)">5</button>
+            <button class="button" id="six" onclick="appendToDisplay(6)">6</button>
             <button class="button" id="multiple" onclick="operator('*')">*</button>
             <button class="button" id="squar" onclick="operator('sin(')">sin()</button>
         </div>
         <div class="row">
-            <button class="button" id="one" onclick="onDigit(1)">1</button>
-            <button class="button" id="two" onclick="onDigit(2)">2</button>
-            <button class="button" id="three" onclick="onDigit(3)">3</button>
+            <button class="button" id="one" onclick="appendToDisplay(1)">1</button>
+            <button class="button" id="two" onclick="appendToDisplay(2)">2</button>
+            <button class="button" id="three" onclick="appendToDisplay(3)">3</button>
             <button class="button" id="substacton" onclick="operator('-')">-</button>
             <button class="button" id="squar" onclick="operator('tan(')">tan()</button>
         </div>
         <div class="row">
             <button class="button" id="dot" onclick="dot()">.</button>
-            <button class="button" id="zero" onclick="onDigit(0)">0</button>
+            <button class="button" id="zero" onclick="appendToDisplay(0)">0</button>
             <button class="button" id="equal" onclick="equal()">=</button>
             <button class="button" id="plus" onclick="operator('+')">+</button>
             <button class="button" id="squar" onclick="operator('log(')">log()</button>
-
         </div>
     </div>
     <script src="calculator.js"></script>
