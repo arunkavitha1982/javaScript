@@ -50,7 +50,7 @@ function operator(value) {
 
 function equal() {
     var userVal = display.textContent;
-    display.textContent = eval(userVal);
+    display.textContent = math.evaluate(userVal);
 }
 
 
