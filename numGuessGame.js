@@ -10,6 +10,7 @@ let win = document.getElementById("scorecounter");
 let displayImage = document.getElementById("result");
 let displayAnswer = document.getElementById("nomoreattempts");
 document.getElementById("other").style.display = "none";
+let sound = document.getElementById('backgroundSound');
 console.log(answer);
 
 function result() {
@@ -19,24 +20,24 @@ function result() {
     }
     else if (guess != 0) {
         if (userInput > answer) {
+            sound.src = "image/Buzzer sound effect.mp3";
+            sound.play();
             displayImage.style.backgroundImage = "url(image/plane.webp)";
             message.textContent = "Too High...Guess Lower";
             displayScore.textContent = guess + "/15";
             guess--;
             guesscounter.textContent += " " + userInput + ",";
-            userInput.value = null;
-
         }
         else if (userInput < answer) {
+            sound.src = "image/Buzzer sound effect.mp3";
             displayImage.style.backgroundImage = "url(https://cdn3.vectorstock.com/i/1000x1000/65/47/low-symbol-vector-1746547.jpg)";
             message.textContent = "Too Low...Guess Higher";
             displayScore.textContent = guess + "/15";
             guesscounter.textContent += " " + userInput + ",";
-            guess--;
-            userInput.value = null;
-
+            guess--;            
         }
         else {
+            sound.src ="image/success-fanfare-trumpets-6185.mp3";
             message.textContent = "Well Done. You Correctly Guessed That The Number Was " + answer + " . Try Another Number.";
             message.style.fontSize = '16px';
             displayScore.textContent = guess;
@@ -71,12 +72,12 @@ function result() {
 }
 
 function reset() {
-    answer = Math.floor((Math.random() * 20) + 1);
+    answer = Math.floor((Math.random() * 50) + 1);
     guess = 15;
     displayScore.textContent = guess + "/15";
     document.body.style.backgroundColor = "orange";
     guesscounter.textContent = "";
-    message.textContent = "Try To Guess The Whole Number Between 0 And 20.";
+    message.textContent = "Try To Guess The Whole Number Between 0 And 50.";
     message.style.fontSize = '16px';
     console.log(answer);
     displayImage.style.backgroundImage = "url(image/question-mark.webp)";
@@ -90,6 +91,7 @@ function reset() {
     displayAnswer.style.backgroundColor = "orange";
     win.textContent = winner;
 }
+
 function giveup() {
     message.style.fontSize = '16px';
     message.textContent = "Did You Give Up? You Did Not Make Any Attempt To Guess The Number. Anyway, The Number Was " + answer + ". Try Another Number.";
