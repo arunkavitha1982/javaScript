@@ -1,6 +1,5 @@
 let answer = Math.floor((Math.random() * 50) + 1);
 let guess = 14;
-let attemot = 1;
 let winner = 0;
 let message = document.getElementById("status");
 let displayScore = document.getElementById("attemptcounter");
@@ -11,7 +10,6 @@ let displayImage = document.getElementById("result");
 let displayAnswer = document.getElementById("nomoreattempts");
 document.getElementById("other").style.display = "none";
 let sound = document.getElementById('backgroundSound');
-console.log(answer);
 
 function result() {
     let userInput = (document.getElementById('guess').value);
@@ -34,10 +32,10 @@ function result() {
             message.textContent = "Too Low...Guess Higher";
             displayScore.textContent = guess + "/15";
             guesscounter.textContent += " " + userInput + ",";
-            guess--;            
+            guess--;
         }
         else {
-            sound.src ="image/success-fanfare-trumpets-6185.mp3";
+            sound.src = "image/success-fanfare-trumpets-6185.mp3";
             message.textContent = "Well Done. You Correctly Guessed That The Number Was " + answer + " . Try Another Number.";
             message.style.fontSize = '16px';
             displayScore.textContent = guess;
@@ -76,10 +74,10 @@ function reset() {
     guess = 15;
     displayScore.textContent = guess + "/15";
     document.body.style.backgroundColor = "orange";
+    document.getElementById("streakcounter").textContent = 0;
     guesscounter.textContent = "";
     message.textContent = "Try To Guess The Whole Number Between 0 And 50.";
     message.style.fontSize = '16px';
-    console.log(answer);
     displayImage.style.backgroundImage = "url(image/question-mark.webp)";
     document.getElementById('guess').value = null;
     guess--;
