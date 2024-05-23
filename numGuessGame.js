@@ -28,7 +28,7 @@ function result() {
         }
         else if (userInput < answer) {
             sound.src = "image/Buzzer sound effect.mp3";
-            displayImage.style.backgroundImage = "url(https://cdn3.vectorstock.com/i/1000x1000/65/47/low-symbol-vector-1746547.jpg)";
+            displayImage.style.backgroundImage = "url(image/low-symbol-vector-1746547.jpg)";
             message.textContent = "Too Low...Guess Higher";
             displayScore.textContent = guess + "/15";
             guesscounter.textContent += " " + userInput + ",";
@@ -52,11 +52,12 @@ function result() {
         }
     }
     else {
-        displayAnswer.textContent = "You Ran Out Of Attempts. The Number Was " + answer + ". Try Another Number.";
-        displayAnswer.style.backgroundColor = "red";
-        displayImage.style.backgroundImage = "url(image/loserImage.avif)";
+        sound.src="image/Lose sound effects.mp3";
+        // displayAnswer.textContent = "You Ran Out Of Attempts. The Number Was " + answer + ". Try Another Number.";
+        // displayAnswer.style.backgroundColor = "red";
+        displayImage.style.backgroundImage = "url(image/10584701-you-lose.jpg)";
         displayScore.textContent = guess;
-        message.textContent = "your are lose the game";
+        message.textContent = "your are lose the game.You Ran Out Of Attempts. The Number Was " + answer + ". Try Another Number.";
         document.getElementById("other").style.display = "block";
         document.getElementById("submit").style.display = "none";
         document.getElementById('guess').style.display = "none";
