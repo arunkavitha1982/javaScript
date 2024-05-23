@@ -53,8 +53,6 @@ function result() {
     }
     else {
         sound.src="image/Lose sound effects.mp3";
-        // displayAnswer.textContent = "You Ran Out Of Attempts. The Number Was " + answer + ". Try Another Number.";
-        // displayAnswer.style.backgroundColor = "red";
         displayImage.style.backgroundImage = "url(image/10584701-you-lose.jpg)";
         displayScore.textContent = guess;
         message.textContent = "your are lose the game.You Ran Out Of Attempts. The Number Was " + answer + ". Try Another Number.";
