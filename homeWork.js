@@ -21,43 +21,67 @@ function button() {
     document.getElementById("While").innerHTML = whileResult;
 }
 
-
 function submit() {
-    let firstNumber = document.getElementById("first").value;
-    let secondNumber = document.getElementById("second").value;
-    let thirdNumber = document.getElementById("third").value;
+    let firstNumber = parseFloat(document.getElementById("first").value);
+    let secondNumber = parseFloat(document.getElementById("second").value);
+    let thirdNumber = parseFloat(document.getElementById("third").value);
 
     let resultText;
-    if (isNaN(firstNumber) || firstNumber === "") {
-        alert("Please enter a valid number.");
+    if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(thirdNumber)) {
+        alert("Please enter valid numbers.");
         return;
     }
-    else{
-        if (firstNumber > secondNumber) {
-            if (firstNumber > thirdNumber) {
-                resultText = "First Number is Big";
-            } else if (firstNumber < thirdNumber) {
-                resultText = "Third Number is Big";
-            } else {
-                resultText = "First and Third Numbers are Equal and Big";
-            }
-        } else if (firstNumber < secondNumber) {
-            if (secondNumber > thirdNumber) {
-                resultText = "Second Number is Big";
-            } else if (secondNumber < thirdNumber) {
-                resultText = "Third Number is Big";
-            } else {
-                resultText = "Second and Third Numbers are Equal and Big";
-            }
+
+    if (firstNumber > secondNumber) {
+        if (firstNumber > thirdNumber) {
+            resultText = "First Number is Big";
+        } else if (firstNumber < thirdNumber) {
+            resultText = "Third Number is Big";
         } else {
-            if (firstNumber > thirdNumber) {
-                resultText = "First and Second Numbers are Equal and Big";
-            } else if (firstNumber < thirdNumber) {
-                resultText = "Third Number is Big";
-            } else {
-                resultText = "All Three Numbers are Equal";
-            }
+            resultText = "First and Third Numbers are Equal and Big";
+        }
+    } else if (firstNumber < secondNumber) {
+        if (secondNumber > thirdNumber) {
+            resultText = "Second Number is Big";
+        } else if (secondNumber < thirdNumber) {
+            resultText = "Third Number is Big";
+        } else {
+            resultText = "Second and Third Numbers are Equal and Big";
+        }
+    } else {
+        if (firstNumber > thirdNumber) {
+            resultText = "First and Second Numbers are Equal and Big";
+        } else if (firstNumber < thirdNumber) {
+            resultText = "Third Number is Big";
+        } else {
+            resultText = "All Three Numbers are Equal";
         }
     }
+
     document.getElementById("result").innerHTML = resultText;
+}
+
+function switch_value() {
+    let userInput = parseInt(document.getElementById("age").value);
+    let displayAge = document.getElementById("display_age");
+
+    if (isNaN(userInput)) {
+        displayAge.innerHTML = "Please enter a valid age.";
+        return;
+    }
+
+    switch (true) {
+        case (userInput < 10):
+            displayAge.innerHTML = "You are a baby";
+            break;
+        case (userInput === 10):
+            displayAge.innerHTML = "You are 10 years old";
+            break;
+        case (userInput > 10):
+            displayAge.innerHTML = "You are an adult";
+            break;
+        default:
+            displayAge.innerHTML = "Invalid age";
+            break;
+    }
 }
