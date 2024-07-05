@@ -2,7 +2,7 @@ function button() {
     let input = document.getElementById("number").value;
     document.getElementById("for").innerHTML = "";
     document.getElementById("While").innerHTML = "";
-    if (isNaN(input) || input === "") {
+    if (input === "") {
         alert("Please enter a valid number.");
         return;
     }
@@ -22,9 +22,9 @@ function button() {
 }
 
 function submit() {
-    let firstNumber = parseFloat(document.getElementById("first").value);
-    let secondNumber = parseFloat(document.getElementById("second").value);
-    let thirdNumber = parseFloat(document.getElementById("third").value);
+    let firstNumber = parseInt(document.getElementById("first").value);
+    let secondNumber = parseInt(document.getElementById("second").value);
+    let thirdNumber = parseInt(document.getElementById("third").value);
 
     let resultText;
     if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(thirdNumber)) {
