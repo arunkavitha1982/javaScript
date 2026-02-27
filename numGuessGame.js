@@ -22,7 +22,7 @@ function result() {
             sound.play();
             displayImage.style.backgroundImage = "url(image/plane.webp)";
             message.textContent = "Too High...Guess Lower";
-            displayScore.textContent = guess + "/15";
+            displayScore.textContent = guess + "/5";
             guess--;
             guesscounter.textContent += " " + userInput + ",";
         }
@@ -30,7 +30,7 @@ function result() {
             sound.src = "image/Buzzer sound effect.mp3";
             displayImage.style.backgroundImage = "url(image/low-symbol-vector-1746547.jpg)";
             message.textContent = "Too Low...Guess Higher";
-            displayScore.textContent = guess + "/15";
+            displayScore.textContent = guess + "/5";
             guesscounter.textContent += " " + userInput + ",";
             guess--;
         }
@@ -40,7 +40,7 @@ function result() {
             message.style.fontSize = '16px';
             displayScore.textContent = guess;
             guesscounter.textContent += " " + userInput + ",";
-            displayScore.textContent = guess + "/15";
+            displayScore.textContent = guess + "/5";
             displayImage.style.backgroundImage = 'url(image/winners-trophy-clip-art.jpg)'
             winner++;
             win.textContent = winner;
@@ -71,7 +71,7 @@ function result() {
 function reset() {
     answer = Math.floor((Math.random() * 50) + 1);
     guess = 15;
-    displayScore.textContent = guess + "/15";
+    displayScore.textContent = guess + "/5";
     document.body.style.backgroundColor = "orange";
     document.getElementById("streakcounter").textContent = 0;
     guesscounter.textContent = "";
