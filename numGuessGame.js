@@ -69,7 +69,7 @@ function endGame() {
 }
 
 function reset() {
-    answer = Math.floor((Math.random() * 50) + 1);
+    // answer = Math.floor((Math.random() * 50) + 1);
     guess = 5;
     displayScore.textContent = guess + "/5";
     document.getElementById("streakcounter").textContent = 0;
